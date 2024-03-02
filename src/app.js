@@ -1,18 +1,18 @@
-import React from 'react'
-import './app.less'
-import logo from '../public/icon.jpg'
+import React from "react";
+import "./app.less";
+import logo from "../public/icon.jpg";
 export default class extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { show: true }
+    super(props);
+    this.state = { show: true };
   }
   handleClose() {
     this.setState({
       show: !this.state.show,
-    })
+    });
   }
   render() {
-    let { show } = this.state
+    let { show } = this.state;
     return (
       <>
         {show ? (
@@ -45,6 +45,6 @@ export default class extends React.Component {
           </div>
         )}
       </>
-    )
+    );
   }
 }
