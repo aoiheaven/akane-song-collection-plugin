@@ -1,5 +1,7 @@
 module.exports = {
   env: {
+    node: true,
+    commonjs: true,
     browser: true,
     es2021: true,
   },
@@ -25,6 +27,7 @@ module.exports = {
     "linebreak-style": ["error", "windows"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
+    "react/no-deprecated": "off",
     "no-unused-vars": "off",
   },
 };

@@ -7,6 +7,7 @@
   right: 0;
   z-index: 999;
 }
+
 .Wokoo-logo {
   height: 30vmin;
   border-radius: 50%;
@@ -15,6 +16,9 @@
 @media (prefers-reduced-motion: no-preference) {
   .Wokoo-logo {
     animation: Wokoo-app-logo-spin infinite 20s linear;
+  }
+  .Wokoo-hide-logo {
+    animation: Wokoo-hide-logo-spin infinite 20s linear;
   }
 }
 
@@ -42,6 +46,7 @@
 .Wokoo-hide {
   position: absolute;
   text-align: center;
+  border-radius: 5%;
   width: 100px;
   height: 40px;
   background-color: #64356c;
@@ -54,11 +59,22 @@
   color: #fff;
   cursor: pointer;
 }
+
 .Wokoo-hide-logo {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   margin-right: 10px;
+  z-index: 1000;
+}
+
+@keyframes Wokoo-hide-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes Wokoo-app-logo-spin {
@@ -68,4 +84,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.DevHint {
+  position: absolute;
+  text-align: left;
+  top: 0px;
+  right: 0px;
+  z-index: 1001;
+  color: red;
 }

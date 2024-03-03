@@ -1,14 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import { Watermark } from "antd";
-import { CloseCircleOutlined } from "@ant-design/icons";
+import { Affix, FloatButton, Watermark } from "antd";
+import {
+  CloseCircleOutlined,
+  CustomerServiceOutlined,
+} from "@ant-design/icons";
 import MainWindow from "./components/MainWindow";
 
 import "./app.less";
 import logo from "../public/icon.jpg";
 
+const ISDEV = process.env.NODE_ENV === "development" ? true : false;
+const InitIsVisible = ISDEV ? true : false;
+
 const App = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(InitIsVisible);
 
   return (
     <>
@@ -20,6 +26,7 @@ const App = () => {
               setIsVisible(false);
             }}
           />
+          {ISDEV ? <p className="DevHint">IN DEVELOPING...</p> : null}
           <div className="Wokoo">
             <Watermark content={["红晓音Akane", "歌单列表"]}>
               <MainWindow />
